@@ -2,6 +2,7 @@ import { EventHandling } from "../componets/EventHandling/EventHandling";
 import { InlineEventHandling } from "../componets/InlineEventHandling/InlineEventHandling";
 import { InputText } from "../componets/InputText/InputText";
 import { MouseTracker } from "../componets/MouseTracker/MouseTracker";
+import { Counter } from "../componets/counter/Counter";
 
 export function HomePage() {
   const title = "Home Page"
@@ -28,6 +29,11 @@ export function HomePage() {
       <section>
         <h2>Mouse Tracker</h2>
         <MouseTracker />
+      </section>
+
+      <section>
+        <h2>Counter</h2>
+        <Counter />
       </section>
     </main>
   )
