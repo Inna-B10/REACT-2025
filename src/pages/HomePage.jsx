@@ -4,9 +4,11 @@ import { InputText } from "../componets/InputText/InputText";
 import { MouseTracker } from "../componets/MouseTracker/MouseTracker";
 
 export function HomePage() {
+  const title = "Home Page"
+
   return (
-    <main>
-      <h1>Home Page</h1>
+    <main style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <h1>{title}</h1>
 
       <section>
         <h2>Innline Event Handling</h2>
