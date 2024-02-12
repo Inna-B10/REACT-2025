@@ -12,8 +12,10 @@ function App() {
     <BrowserRouter>
       <Routes>
 
+        {/* Vi starter med en "/" her som gjør at dette blir en absolut filsti */}
         <Route path='/' element={<Layout />}>
           <Route index element={<HomePage />} />
+          {/* Side vi ikke starter med en "/" så blir dette en relative url som tar med parents path verdi */}
           {/* path blir her parent route + this path => "/" + "about" = "/about" */}
           <Route path='about' element={<AboutPage />} />
         </Route>
