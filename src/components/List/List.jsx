@@ -14,7 +14,7 @@ const tags = articleResponse.articles
 export function List() {
   // Tilstander vi trenger å holde rede på
   const [searchTerm, setSearchTerm] = useState("")
-  const [tagFilter, setTagFilter] = useState("at")
+  const [tagFilter, setTagFilter] = useState("")
 
   // Deriverte tilstander (verdier/variabler vi kan beregne basert på det vi allered har)
   const filterdList = articleResponse.articles
@@ -23,9 +23,14 @@ export function List() {
 
   return (
     <div>
-      <input type="text" onChange={(event) => setSearchTerm(event.target.value.toLowerCase())} />
+      <div className="p-1 flex justify-center gap-1">
+        <input className="bg-neutral-100 border border-neutral-200 shadow-sm rounded-l-full pl-4 py-1" placeholder="Search.." type="text" onChange={(event) => setSearchTerm(event.target.value.toLowerCase())} />
 
-      <select onChange={(event) => setTagFilter(event.target.value)}>
+        <select defaultValue="" className="bg-neutral-100 border border-neutral-200 shadow-sm rounded-r-full pr-4 py-1" onChange={(event) => setTagFilter(event.target.value)}>
+          <option value="">
+            unset
+          </option>
+
         {tags.map((tag) => {
           return (
             <option key={tag} value={tag}>
@@ -34,11 +39,12 @@ export function List() {
           )
         })}
       </select>
+      </div>
 
-      <ul>
+      <ul className="flex flex-col gap-4 py-4 transition-all">
         {filterdList.map((article) => {
           return (
-            <li key={article.slug}>
+            <li key={article.slug} className="border-b pb-4 pt-2 shadow-sm">
               <ArticleCard article={article} />
             </li>
           )
@@ -57,11 +63,24 @@ export function List() {
  */
 function ArticleCard(props) {
   return (
-    <article>
-      <h2>
+    <article className="flex flex-col gap-4 px-4 mx-auto max-w-2xl">
+      <header>
+        <h2 className="underline text-lg font-semibold">
         {props.article.title}
       </h2>
-      <p>{props.article.description}</p>
+      </header>
+
+      <section>
+        <p className="max-w-xl">{props.article.description}</p>
+      </section>
+
+      <footer className="flex justify-between items-end">
+        <p>Author: <span className="italic font-light">{props.article.author.username}</span></p>
+        <div className="text-xs flex flex-col">
+          <p className="flex grow gap-2 justify-between">Authored: <span>{new Date(props.article.createdAt).toLocaleDateString()}</span></p>
+          <p className="flex grow gap-2 justify-between">Updated: <span>{new Date(props.article.updatedAt).toLocaleDateString()}</span></p>
+        </div>
+      </footer>
     </article>
   )
 }
