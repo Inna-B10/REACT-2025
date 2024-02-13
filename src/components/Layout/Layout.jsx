@@ -8,8 +8,6 @@ import { useState } from "react"
 export function Layout(properties) {
   const [user, setUser] = useState(null)
 
-  console.log(user)
-
   function signin() {
     // Send messages to the backend
 
