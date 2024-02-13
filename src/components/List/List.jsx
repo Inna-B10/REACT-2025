@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { articleResponse } from "./posts";
+import { articleResponse, articleTags } from "./posts";
 
-// Denne fungerer ikke som den skal
-const tags = articleResponse.articles
-  .reduce((tagList, article) => [...tagList, ...article.tagList], [])
-  .filter((item, i, array) => array.indexOf(item) === array.lastIndexOf(item))
-
+// En lit hacky måte å hente ut typen til en enkelt artikkel
 /**
+ * Et Artikkel objekt
+ * 
  * @typedef {typeof articleResponse.articles[0]} Article
  */
 
-
+/**
+ * En liste over artikler med søkefelt og tag filtrering
+ */
 export function List() {
   // Tilstander vi trenger å holde rede på
   const [searchTerm, setSearchTerm] = useState("")
@@ -18,7 +18,7 @@ export function List() {
 
   // Deriverte tilstander (verdier/variabler vi kan beregne basert på det vi allered har)
   const filterdList = articleResponse.articles
-    .filter((article) => article.tagList.includes(tagFilter))
+    .filter((article) => tagFilter === "" ? true : article.tagList.includes(tagFilter))
     .filter((article) => customArticleFilter(article, searchTerm.toLowerCase()))
 
   return (
@@ -31,14 +31,14 @@ export function List() {
             unset
           </option>
 
-        {tags.map((tag) => {
-          return (
-            <option key={tag} value={tag}>
-              {tag}
-            </option>
-          )
-        })}
-      </select>
+          {articleTags.map((tag) => {
+            return (
+              <option key={tag} value={tag}>
+                {tag}
+              </option>
+            )
+          })}
+        </select>
       </div>
 
       <ul className="flex flex-col gap-4 py-4 transition-all">
@@ -55,6 +55,7 @@ export function List() {
 }
 
 /**
+ * En enkelt artikkel
  * 
  * @param {{
  *  article: Article
@@ -66,8 +67,8 @@ function ArticleCard(props) {
     <article className="flex flex-col gap-4 px-4 mx-auto max-w-2xl">
       <header>
         <h2 className="underline text-lg font-semibold">
-        {props.article.title}
-      </h2>
+          {props.article.title}
+        </h2>
       </header>
 
       <section>
@@ -86,6 +87,9 @@ function ArticleCard(props) {
 }
 
 /**
+ * Funksjon for å finne ut om en artikkel inneholder
+ * søke strengen
+ * 
  * @param {Article} article 
  * @param {string} searchTerm 
  */

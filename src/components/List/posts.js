@@ -1,3 +1,6 @@
+/**
+ * Response objekt fra en artikkel API
+ */
 export const articleResponse = {
   "articles": [
     {
@@ -442,3 +445,13 @@ export const articleResponse = {
   ],
   "articlesCount": 251
 }
+
+// Denne fungerer ikke som den skal
+// Målet var å lage en ny liste av unike tags fra artikkel
+// listen som vi hentet inn, men det er noe som ikke fungerer
+/**
+ * Liste over alle unike artikkel tags 
+ */
+export const articleTags = articleResponse.articles
+  .reduce((tagList, article) => [...tagList, ...article.tagList], [])
+  .filter((item, index, array) => index === array.lastIndexOf(item))
