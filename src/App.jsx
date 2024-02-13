@@ -5,15 +5,18 @@ import { List } from "./components/List/List";
 function App() {
   return (
     <Layout>
-      <section className="border-b py-8 flex flex-col gap-4">
-        <h2 className="text-center text-2xl underline font-bold">Counter</h2>
-        <div className="flex justify-center">
+      <section className="flex flex-col gap-4 py-8 border-b">
+        <h2 className="text-2xl font-bold text-center underline">Counter</h2>
+        <div className="flex justify-center gap-4">
+          <Counter />
+          <Counter />
+          <Counter />
           <Counter />
         </div>
       </section>
 
-      <section className="border-b py-8 flex flex-col gap-4">
-        <h2 className="text-center text-2xl underline font-bold">
+      <section className="flex flex-col gap-4 py-8 border-b">
+        <h2 className="text-2xl font-bold text-center underline">
           Article List
         </h2>
         <List />
