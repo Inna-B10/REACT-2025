@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 /**
  * @param {{
@@ -6,27 +6,27 @@ import { useState } from "react"
  * }} properties
  */
 export function Layout(properties) {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
   function signin() {
     // Send messages to the backend
 
-    const username = prompt("Username")
+    const username = prompt("Username");
 
-    const password = prompt("Pasword")
+    const password = prompt("Pasword");
 
     if (!username || !password) {
-      return
+      return;
     }
 
     // Finaly set user
     setUser({
       name: username,
-    })
+    });
   }
 
   function signout() {
-    setUser(null)
+    setUser(null);
   }
 
   return (
@@ -35,28 +35,26 @@ export function Layout(properties) {
         <a href="/">PlaceholderIcon</a>
 
         <div className="flex items-center gap-4">
-          {
-            user === null ? (
+          {user === null ? (
+            <button
+              className="bg-teal-600 hover:bg-teal-500 active:bg-teal-700 px-2 py-1 rounded-md"
+              onClick={signin}
+            >
+              Log In
+            </button>
+          ) : (
+            <>
+              <p className="capitalize bg-neutral-400 px-2 py-1 rounded-md">
+                {user.name}
+              </p>
               <button
                 className="bg-teal-600 hover:bg-teal-500 active:bg-teal-700 px-2 py-1 rounded-md"
-                onClick={signin}
+                onClick={signout}
               >
-                Log In
+                Log Out
               </button>
-            ) : (
-              <>
-                <p className="capitalize bg-neutral-400 px-2 py-1 rounded-md">
-                  {user.name}
-                </p>
-                <button
-                  className="bg-teal-600 hover:bg-teal-500 active:bg-teal-700 px-2 py-1 rounded-md"
-                  onClick={signout}
-                >
-                  Log Out
-                </button>
-              </>
-            )
-          }
+            </>
+          )}
         </div>
       </header>
 
@@ -68,5 +66,5 @@ export function Layout(properties) {
         <p className="text-center">Modul D</p>
       </footer>
     </div>
-  )
+  );
 }
