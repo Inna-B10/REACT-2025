@@ -1,4 +1,3 @@
-import './App.css'
 import { Counter } from './components/Counter/Counter'
 import { Layout } from './components/Layout/Layout'
 import { List } from './components/List/List'

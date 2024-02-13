@@ -30,26 +30,42 @@ export function Layout(properties) {
   }
 
   return (
-    <div>
-      <header>
+    <div className="flex flex-col min-h-screen">
+      <header className="flex justify-between p-2 bg-rose-950 text-amber-50 items-center">
+        <a href="/">PlaceholderIcon</a>
 
-        {
-          user === null ?
-            <p>Not Logged In</p> :
-            <p>{user.name}</p>
-        }
-
-        <button onClick={signin}>Log In</button>
-        <button onClick={signout}>Log Out</button>
-
+        <div className="flex items-center gap-4">
+          {
+            user === null ? (
+              <button
+                className="bg-teal-600 hover:bg-teal-500 active:bg-teal-700 px-2 py-1 rounded-md"
+                onClick={signin}
+              >
+                Log In
+              </button>
+            ) : (
+              <>
+                <p className="capitalize bg-neutral-400 px-2 py-1 rounded-md">
+                  {user.name}
+                </p>
+                <button
+                  className="bg-teal-600 hover:bg-teal-500 active:bg-teal-700 px-2 py-1 rounded-md"
+                  onClick={signout}
+                >
+                  Log Out
+                </button>
+              </>
+            )
+          }
+        </div>
       </header>
 
-      <main>
+      <main className="flex flex-col gap-4 px-4 grow">
         {properties.children}
       </main>
 
-      <footer>
-        <p>Modul D</p>
+      <footer className="bg-rose-950 text-amber-50 px-2 py-4">
+        <p className="text-center">Modul D</p>
       </footer>
     </div>
   )
