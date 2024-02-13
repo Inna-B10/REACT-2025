@@ -1,10 +1,11 @@
 import './App.css'
 import { Counter } from './components/Counter/Counter'
+import { Layout } from './components/Layout/Layout'
 import { List } from './components/List/List'
 
 function App() {
   return (
-      <div>
+    <Layout>
       <section>
         <h2>Counter</h2>
         <Counter />
@@ -14,7 +15,7 @@ function App() {
         <h2>Article List</h2>
         <List />
       </section>
-      </div>
+    </Layout>
   )
 }
 
