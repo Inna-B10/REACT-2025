@@ -17,5 +17,8 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    // Denne regelen slår proptypes kravet av, du kan og søke
+    // opp hvordan du kan legge til proptypes på komponentene dine
+    'react/prop-types': "off"
   },
 }
