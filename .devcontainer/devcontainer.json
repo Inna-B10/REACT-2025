@@ -8,7 +8,9 @@
 		"vscode": {
 			"extensions": [
 				"bradlc.vscode-tailwindcss",
-				"heybourn.headwind"
+				"heybourn.headwind",
+				"esbenp.prettier-vscode",
+				"dbaeumer.vscode-eslint"
 			]
 		}
 	}
