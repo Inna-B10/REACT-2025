@@ -11,7 +11,7 @@ export function Countdown(props) {
   const [time, setTime] = useState(props.time)
 
   useEffect(() => {
-    const intervalId = setTimeout(() => {
+    const intervalId = setInterval(() => {
       console.log("1 second passed")
 
       setTime((oldTime) => {
