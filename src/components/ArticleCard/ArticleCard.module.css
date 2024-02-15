@@ -1,0 +1,17 @@
+.container {
+  background-color: rgb(255, 229, 185);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
+
+  max-width: 32rem;
+}
+
+.container header {
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.container p {
+}

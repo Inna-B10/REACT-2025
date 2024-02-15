@@ -1,3 +1,5 @@
+import style from './ArticleCard.module.css'
+
 /**
  * The Shape of the Article we get back
  * from the API we are using
