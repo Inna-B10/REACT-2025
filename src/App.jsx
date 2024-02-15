@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { Countdown } from "./components/Countdown/Countdown"
 import { useFetch } from "./hooks/useFetch"
-
+import { LoadingSpinner } from './components/LoadingSpinner/LoadingSpinner'
+import { ErrorMessage } from "./components/ErrorMessage/ErrorMessage"
 
 function App() {
   const { data, error, isLoading } = useFetch("https://api.realworld.io/api/articles?limit=20")
@@ -23,9 +24,9 @@ function App() {
         <h2>Articles</h2>
         {
           isLoading ?
-            <p>Loading...</p> :
+            <LoadingSpinner /> :
             error ?
-              <p>Error</p> :
+              <ErrorMessage message="failed fetching data" /> :
               <ul>
                 {
                   data.articles.map((article) => {
