@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Countdown } from "./components/Countdown/Countdown";
 import { useFetch } from "./hooks/useFetch";
+import {ArticleCard} from './components/ArticleCard/ArticleCard'
 import { LoadingSpinner } from "./components/LoadingSpinner/LoadingSpinner";
 import { ErrorMessage } from "./components/ErrorMessage/ErrorMessage";
 
@@ -39,38 +40,3 @@ function App() {
 }
 
 export default App;
-
-/**
- * @typedef {{
- * "slug": string
- * "title": string,
- * "description": string,
- * "body": string,
- * "tagList": string[],
- * "createdAt": string,
- * "updatedAt": string,
- * "favorited": boolean,
- * "favoritesCount": number,
- * "author": {
- *   "username": string,
- *   "bio": string | null,
- *   "image": string,
- *   "following": boolean
- * }
- * }} Article
- */
-
-/**
- *
- * @param {{
- * article: Article
- * }} props
- */
-function ArticleCard(props) {
-  return (
-    <article>
-      <header>{props.article.title}</header>
-      <p>{props.article.body}</p>
-    </article>
-  );
-}
