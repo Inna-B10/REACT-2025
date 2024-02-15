@@ -1,3 +1,9 @@
+.section-countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .section-articles {
   display: flex;
   flex-direction: column;

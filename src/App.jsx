@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div>
-      <section>
+      <section className={style["section-countdown"]}>
         <h2>CountDown</h2>
         <button onClick={() => setEnableTimer(!enableTimer)}>Hide Timer</button>
         {enableTimer ? <Countdown time={10} /> : <p>Timer hidden</p>}
