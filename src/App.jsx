@@ -4,6 +4,7 @@ import { useFetch } from "./hooks/useFetch";
 import {ArticleCard} from './components/ArticleCard/ArticleCard'
 import { LoadingSpinner } from "./components/LoadingSpinner/LoadingSpinner";
 import { ErrorMessage } from "./components/ErrorMessage/ErrorMessage";
+import style from './App.module.css'
 
 function App() {
   const { data, error, isLoading } = useFetch(
@@ -19,12 +20,12 @@ function App() {
         {enableTimer ? <Countdown time={10} /> : <p>Timer hidden</p>}
       </section>
 
-      <section>
+      <section className={style["section-articles"]}>
         <h2>Articles</h2>
         {isLoading ? (<LoadingSpinner />)
         : error ? (<ErrorMessage message="failed fetching data" />)
         : (
-          <ul>
+          <ul className={style["articles"]}>
             {data.articles.map((article) => {
               return (
                 <li key={article.slug}>
