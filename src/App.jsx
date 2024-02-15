@@ -20,11 +20,9 @@ function App() {
 
       <section>
         <h2>Articles</h2>
-        {isLoading ? (
-          <LoadingSpinner />
-        ) : error ? (
-          <ErrorMessage message="failed fetching data" />
-        ) : (
+        {isLoading ? (<LoadingSpinner />)
+        : error ? (<ErrorMessage message="failed fetching data" />)
+        : (
           <ul>
             {data.articles.map((article) => {
               return (
