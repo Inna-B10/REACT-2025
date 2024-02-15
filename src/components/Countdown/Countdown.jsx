@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import style from './Countdown.module.css'
 
 /**
  *
@@ -28,7 +29,7 @@ export function Countdown(props) {
   }, []);
 
   return (
-    <div>
+    <div className={style["container"]}>
       <p>Remaining {time}</p>
     </div>
   );
