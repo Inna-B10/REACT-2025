@@ -6,10 +6,16 @@ export function UserDisplayStore() {
   const signout = useUserStore((state) => state.signout)
 
   return (
-    <div>
+    <div className="flex flex justify-between min-w-md">
       {
         user === null
-        ? <button onClick={signin}>Signin</button>
+        ? (
+          <>
+            {/* Spacer */}
+            <div></div>
+            <button onClick={signin}>Signin</button>
+          </>
+        )
         : (
           <>
             <p>{user.name}</p>

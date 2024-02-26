@@ -4,10 +4,16 @@ export function UserDisplay() {
   const {user, signin, signout} = useUserContext()
 
   return (
-    <div>
+    <div className="flex flex justify-between min-w-md">
       {
         user === null
-        ? <button onClick={signin}>Signin</button>
+        ? (
+          <>
+            {/* Spacer */}
+            <div></div>
+            <button onClick={signin}>Signin</button>
+          </>
+        )
         : (
           <>
             <p>{user.name}</p>

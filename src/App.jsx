@@ -7,34 +7,45 @@ import { UserDisplayStore } from './componets/UserDisplayStore/UserDisplayStore'
 function App() {
   return (
     <UserContextProvider>
-      <div>
-        <header>
+      <div className="flex flex-col min-h-screen">
+        <header className="flex justify-between p-md">
           <h1>Advanced State Managment</h1>
 
-          <div>
-            <p>Store</p>
-            <UserDisplayStore />
-          </div>
+          <div className="flex gap-lg">
+            <div>
+              <p>Store</p>
+              <UserDisplayStore />
+            </div>
 
-          <div>
-            <p>Use State</p>
-            <UserDisplay />
+            <div>
+              <p>Use State</p>
+              <UserDisplay />
+            </div>
           </div>
         </header>
 
-        <main>
+        <main className="grow mx-auto flex flex-col gap-lg">
           <section>
             <h2>Use State Counter</h2>
-            <Counter />
-            <Counter />
+            <div className="flex justify-between">
+              <Counter />
+              <Counter />
+            </div>
           </section>
 
           <section>
             <h2>Use Store Counter</h2>
-            <StoreCounter />
-            <StoreCounter />
+            <div className="flex justify-between">
+              <StoreCounter />
+              <StoreCounter />
+            </div>
           </section>
         </main>
+
+        <footer className="px-md py-lg">
+          <p className="text-center">Modul D</p>
+          <p className="text-center">Jobloop</p>
+        </footer>
       </div>
     </UserContextProvider>
   )
