@@ -1,8 +1,8 @@
-import { Counter } from "./componets/counter/Counter"
-import { StoreCounter } from './componets/storeCounter/StoreCounter'
-import { UserContextProvider } from "./contexts/UserContext/UserContext"
-import { UserDisplay } from "./componets/UserDisplay/UserDisplay"
-import { UserDisplayStore } from './componets/UserDisplayStore/UserDisplayStore'
+import { Counter } from "./componets/counter/Counter";
+import { StoreCounter } from "./componets/storeCounter/StoreCounter";
+import { UserContextProvider } from "./contexts/UserContext/UserContext";
+import { UserDisplay } from "./componets/UserDisplay/UserDisplay";
+import { UserDisplayStore } from "./componets/UserDisplayStore/UserDisplayStore";
 
 function App() {
   return (
@@ -48,7 +48,7 @@ function App() {
         </footer>
       </div>
     </UserContextProvider>
-  )
+  );
 }
 
-export default App
+export default App;
