@@ -1,8 +1,4 @@
-# React + Vite
+# React og Lister
+Veldig ofte så ønsker vi å generere et sett med komponenter fra lister (array) med data. React gjør dette ganske enkelt ved at vi kan rendre lister med JSX elementer uten noe særlig problemer.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://react.dev/learn/rendering-lists?authuser=2
