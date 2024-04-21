@@ -2,10 +2,10 @@
 Komponenter enkapsulerer en bit av et Grafisk Grensesnitt.
 
 # Dette kan være alt fra:
-    En spesifikk knapp med styling
-    En sammensatt Bruker Registrerings Form
-    Layout komponenter som bestemmer hvordan Header, Aside, Main og Footer skal arrangeres
-    Hele Sider av Applikasjonen din
+- En spesifikk knapp med styling
+- En sammensatt Bruker Registrerings Form
+- Layout komponenter som bestemmer hvordan Header, Aside, Main og Footer skal arrangeres
+- Hele Sider av Applikasjonen din
     
 I React så blir disse komponenentene gitt gjennom funksjoner som returnerer en ny data type (JSX).
 Vi skal starte med 3 forskjellige måter vi kan definere disse komponentene på.
