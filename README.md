@@ -217,7 +217,7 @@ While focusing on Unit, Integration, and E2E tests is crucial, there are more te
 [Circle CI]: https://circleci.com/
 [Jenkins]: https://www.jenkins.io/
 [Google Lighthouse]: https://github.com/GoogleChrome/lighthouse
-## ----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
 # Tester/Spesifikasjoner
 
 Tester er noe du har gjort gjennom all utviklingen hittil. Det enkleste er at du har skrevet noe kode og så sjekket i nettleseren at resultatet er som du forventet. Automatiske tester er i essens det samme, men her skriver vi kode som gjør denne jobben for oss. Noe å notere seg er at det er veldig stor forskjell mellom bedrifter her på hvor mye som testes og om det i det hele tatt utføres automatiske tester i det hele tatt.
@@ -248,16 +248,17 @@ Repoet som er linket har en veldig enkel pipeline som kjører tester på alle Pu
 
 
 ## Lenker
-- **Testing av JavaScript funksjoner**
- **Vitest** - https://vitest.dev/
-  Testing Rammeverk for testing av JavaScript, med integrasjoner mot Vite
-- **Biblioteker for testing av React Applikasjoner**
- **@testing-library/react** - https://testing-library.com/docs/react-testing-library/intro/
-  For å teste React komponenter
- **happy-dom**
-  For å kunne teste mot et lettvektig DOM
-- **Ende til Ende Testing av nettsider/applikasjoner- Cypress**  Her er nettlesere som kan programmeres til å gå igjennom nettsiden din for å teste bruker reiser som du har definert.
-  Registrere ny bruker, bestille varer, med mer.
+### **Testing av JavaScript funksjoner**
+- **Vitest** - https://vitest.dev/
+ <br> Testing Rammeverk for testing av JavaScript, med integrasjoner mot Vite
+### **Biblioteker for testing av React Applikasjoner**
+- **@testing-library/react** - https://testing-library.com/docs/react-testing-library/intro/
+  <br>For å teste React komponenter
+ - **happy-dom**
+  <br>For å kunne teste mot et lettvektig DOM
+### **Ende til Ende Testing av nettsider/applikasjoner- Cypress** 
+Her er nettlesere som kan programmeres til å gå igjennom nettsiden din for å teste bruker reiser som du har definert.
+ <br> Registrere ny bruker, bestille varer, med mer.
 
 ## Merknad:
 
