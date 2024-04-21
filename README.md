@@ -217,3 +217,50 @@ While focusing on Unit, Integration, and E2E tests is crucial, there are more te
 [Circle CI]: https://circleci.com/
 [Jenkins]: https://www.jenkins.io/
 [Google Lighthouse]: https://github.com/GoogleChrome/lighthouse
+## ----------------------------------------------------------------------------------------------
+# Tester/Spesifikasjoner
+
+Tester er noe du har gjort gjennom all utviklingen hittil. Det enkleste er at du har skrevet noe kode og så sjekket i nettleseren at resultatet er som du forventet. Automatiske tester er i essens det samme, men her skriver vi kode som gjør denne jobben for oss. Noe å notere seg er at det er veldig stor forskjell mellom bedrifter her på hvor mye som testes og om det i det hele tatt utføres automatiske tester i det hele tatt.
+
+En noe grov oversikt:
+
+- Hvor mange lover og reguleringer må systemet oppfylle?
+Finans, Helse og industri sektoren har mange lovpålagte krav de må tilfredstille som leder til mer testing
+- Hvor mange er avhengig av at systemet fungerer?
+Mange er avhengig av React, mens få er avhengig av dine private prosjekter. Mye testing for React, mindre testing for dine.
+
+Vi deler tester inn i litt forskjellige typer avhengig av hva vi skal teste. De mest brukte:
+- **Unit Tester**
+Minste og mest vanlige typen for tester. Tester at funksjoner returnere spesifikke verdier når de kjøres med spesifikke variabler
+- **Integrasjons Tester**
+Det er ett stort spenn her. Tester at individuelle komponenter fungerer sammen. Størrelsen på komponentene spenner fra sett med funksjoner til større samlinger med systemer.
+- **Ende til Ende Tester**
+Øverste laget av tester der vi tester funksjoner til hele systemer og at det fungerer som det er designet. For nettsider/applikasjoner så vil dette bety at vi går igjennom en prossess som f.eks registrerings prosessen og sørger for at den fungerer. For automatisering så vil dette bety at vi starter en hel nettleser og har et program som går igjennom alle disse stegene for oss. Dette er komplisert og dyrt, så vi holder disse noe begrenset og til funksjonalitet som er kritisk for at systemet vårt fungerer.
+
+## Kontinuerlig Integrasjon
+
+I forbindelses med automatisering av tester så har vi det som kalles Continuous Integration (CI) som betyr at vi kjører igjennom det settet med automatiske tester vi har definert før nye endringer til kodebasen innføres. Dette gjør at vi har en større tillit til at systemet vårt fortsetter å fungerer som designet selv etter nye endringer er inkludert.
+
+Dette kan gjøres gjennom GitHub Actions, hvor vi setter opp at noe skal skje når nye hendelser inntreffer i GitHub repoet vårt.
+De er ikke veldig komplekse, men kan være noe knotete å sette opp. GitHub har en markedsplass for forskjellige ferdig oppsett som jeg anbefaler å hente ting i fra til å begynne med.
+
+Repoet som er linket har en veldig enkel pipeline som kjører tester på alle Pull Requests som opprettes mot main. Noe som gir deg en indikasjon på om endringen er klar til å lanseres til brukerne (lansering av en ny versjon). Dette forutsetter at de automatiske testene som er skrevet dekker det som er viktig av funksjonalitet.
+
+
+## Lenker
+- **Testing av JavaScript funksjoner**
+ **Vitest** - https://vitest.dev/
+  Testing Rammeverk for testing av JavaScript, med integrasjoner mot Vite
+- **Biblioteker for testing av React Applikasjoner**
+ **@testing-library/react** - https://testing-library.com/docs/react-testing-library/intro/
+  For å teste React komponenter
+ **happy-dom**
+  For å kunne teste mot et lettvektig DOM
+- **Ende til Ende Testing av nettsider/applikasjoner- Cypress**  Her er nettlesere som kan programmeres til å gå igjennom nettsiden din for å teste bruker reiser som du har definert.
+  Registrere ny bruker, bestille varer, med mer.
+
+## Merknad:
+
+Litt kort sagt om tester er at de krever planlegging før en settter de opp, et annet navn som kan bites merke i er ordet spesifikasjon.Vet du ikke hva programmet eller funksjonen din skal gjøre, så kan en heller ikke skrive tester for at de gjør det du ikke vet.
+
+Dette gjør at for å kunne skrive automatiserte tester så må du ha et klart formulert svar, eller krav, som systemet ditt skal oppfylle.
