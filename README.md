@@ -17,7 +17,8 @@ For å lære mer om useState kan du besøke de offisielle React-dokumentasjonssi
 - React Docs - [useState](https://react.dev/reference/react/useState)
 - React Docs - [React hooks](https://react.dev/reference/react/hooks)
 - React Learn - [State: A Components Memory](https://react.dev/learn/state-a-components-memory)
-
+- Bonus: Repo stilsatt  via TailwindCSS - https://github.com/LarsGJobloop/kodehodet-modul-d-13-02-24-use-state
+  
 <br>
 
 - Ekstra [TailwindCSS](https://tailwindcss.com/)
