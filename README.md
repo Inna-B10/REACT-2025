@@ -10,6 +10,6 @@
     React oppdatere DOMet til å reflektere det Virtuelle DOMet
     Når vi ønsker å oppdatere innholdet i DOMet så må vi gå igjennom React
 
-    https://react.dev/learn/responding-to-events?authuser=2
+https://react.dev/learn/responding-to-events?authuser=2
 
-    https://react.dev/learn/render-and-commit?authuser=2
+https://react.dev/learn/render-and-commit?authuser=2
