@@ -3,21 +3,26 @@ import {
   Routes,
   Route,
 } from 'react-router-dom'
-import { Layout } from './pages/Layout'
-import { HomePage } from './pages/HomePage'
+import { LandingPage } from './pages/LandingPage'
 import { AboutPage } from './pages/about/AboutPage'
+import { NotFoundPage } from './pages/NotFoundPage'
+import { LayoutRoot } from './pages/LayoutRoot'
+import { ArticlesPage } from './pages/articles/ArticlesPage'
+import { Article } from './pages/articles/slug/Article'
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
 
-        {/* Vi starter med en "/" her som gjør at dette blir en absolut filsti */}
-        <Route path='/' element={<Layout />}>
-          <Route index element={<HomePage />} />
-          {/* Side vi ikke starter med en "/" så blir dette en relative url som tar med parents path verdi */}
-          {/* path blir her parent route + this path => "/" + "about" = "/about" */}
-          <Route path='about' element={<AboutPage />} />
+        <Route path='/' element={<LayoutRoot />}>
+          {/* index signifies that this is the default route */}
+          <Route index element={ <LandingPage /> } />
+          <Route path='/about' element={ <AboutPage /> } />
+          <Route path='/articles' element={ <ArticlesPage /> } />
+          <Route path='/articles/:slug' element={ <Article /> } />
+
+          <Route path='*' element={ <NotFoundPage /> } />
         </Route>
 
       </Routes>
