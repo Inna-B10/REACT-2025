@@ -1,0 +1,130 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+:root {
+  --spacing-base: 2px;
+}
+
+.gap-sm {
+  gap: calc(var(--spacing-base) * 1);
+}
+.gap-md {
+  gap: calc(var(--spacing-base) * 3);
+}
+.gap-lg {
+  gap: calc(var(--spacing-base) * 6);
+}
+
+.p-sm {
+  padding: calc(var(--spacing-base) * 1);
+}
+.p-md {
+  padding: calc(var(--spacing-base) * 3);
+}
+.p-lg {
+  padding: calc(var(--spacing-base) * 6);
+}
+
+.px-sm {
+  padding-left: calc(var(--spacing-base) * 1);
+  padding-right: calc(var(--spacing-base) * 1);
+}
+.px-md {
+  padding-left: calc(var(--spacing-base) * 3);
+  padding-right: calc(var(--spacing-base) * 3);
+}
+.px-lg {
+  padding-left: calc(var(--spacing-base) * 6);
+  padding-right: calc(var(--spacing-base) * 6);
+}
+
+.py-sm {
+  padding-top: calc(var(--spacing-base) * 1);
+  padding-bottom: calc(var(--spacing-base) * 1);
+}
+.py-md {
+  padding-top: calc(var(--spacing-base) * 3);
+  padding-bottom: calc(var(--spacing-base) * 3);
+}
+.py-lg {
+  padding-top: calc(var(--spacing-base) * 6);
+  padding-bottom: calc(var(--spacing-base) * 6);
+}
+
+.m-sm {
+  margin: calc(var(--spacing-base) * 1);
+}
+.m-md {
+  margin: calc(var(--spacing-base) * 3);
+}
+.m-lg {
+  margin: calc(var(--spacing-base) * 6);
+}
+
+.mx-sm {
+  margin-left: calc(var(--spacing-base) * 1);
+  margin-right: calc(var(--spacing-base) * 1);
+}
+.mx-md {
+  margin-left: calc(var(--spacing-base) * 3);
+  margin-right: calc(var(--spacing-base) * 3);
+}
+.mx-lg {
+  margin-left: calc(var(--spacing-base) * 6);
+  margin-right: calc(var(--spacing-base) * 6);
+}
+
+.my-sm {
+  margin-top: calc(var(--spacing-base) * 1);
+  margin-bottom: calc(var(--spacing-base) * 1);
+}
+.my-md {
+  margin-top: calc(var(--spacing-base) * 3);
+  margin-bottom: calc(var(--spacing-base) * 3);
+}
+.my-lg {
+  margin-top: calc(var(--spacing-base) * 6);
+  margin-bottom: calc(var(--spacing-base) * 6);
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.min-w-sm {
+  min-width: calc(var(--spacing-base) * 20);
+}
+.min-w-md {
+  min-width: calc(var(--spacing-base) * 60);
+}
+.min-w-lg {
+  min-width: calc(var(--spacing-base) * 100);
+}
