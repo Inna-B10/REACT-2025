@@ -1,0 +1,25 @@
+body {
+  margin: 0px;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: cornflowerblue; 
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.footer {
+  background-color: cornflowerblue;
+}
+
+.container {
+  background-color: coral;
+}
