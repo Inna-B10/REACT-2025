@@ -1,0 +1,85 @@
+/* 
+This file contains all the color definitions
+that are used in the project.
+
+This means that all other classes should use
+the variables defined here over specifying
+their own colors.
+
+Exceptions are where a derivining class is
+overriding the opacity of the color palette.
+This is fine.
+*/
+
+/* The default Palett */
+:root {
+  --color-primary: rgb(80, 13, 128);
+  --color-accent: rgb(255, 192, 115);
+  --color-white: rgb(254, 248, 242);
+  --color-black: rgb(45, 41, 50);
+  --color-gray: rgb(84, 80, 89);
+}
+
+.bright {
+  --color-primary: rgb(80, 13, 128);
+  --color-accent: rgb(255, 192, 115);
+  --color-white: rgb(248, 243, 253);
+  --color-black: rgb(21, 20, 22);
+  --color-gray: rgb(84, 80, 89);
+}
+
+/* 
+Here we have written a set of CSS utility classe to
+make use of our color palette
+*/
+
+/* Text color */
+.text-primary {
+  color: var(--color-primary);
+}
+.text-accent {
+  color: var(--color-accent);
+}
+.text-white {
+  color: var(--color-white);
+}
+.text-black {
+  color: var(--color-black);
+}
+.text-gray {
+  color: var(--color-gray);
+}
+
+/* Background color */
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.bg-accent {
+  background-color: var(--color-accent);
+}
+.bg-white {
+  background-color: var(--color-white);
+}
+.bg-black {
+  background-color: var(--color-black);
+}
+.bg-gray {
+  background-color: var(--color-gray);
+}
+
+/* Border color */
+.border-color-primary {
+  border-color: var(--color-primary);
+}
+.border-color-accent {
+  border-color: var(--color-accent);
+}
+.border-color-white {
+  border-color: var(--color-white);
+}
+.border-color-black {
+  border-color: var(--color-black);
+}
+.border-color-gray {
+  border-color: var(--color-gray);
+}

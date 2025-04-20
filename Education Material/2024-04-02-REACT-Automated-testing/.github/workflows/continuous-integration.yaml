@@ -1,0 +1,48 @@
+name: "CI"
+# When this workflow should be executed
+on:
+  # Type of event
+  pull_request:
+    # Only against branches
+    branches:
+      - main
+
+jobs:
+  # Run the tests defined in this repository
+  unit-tests:
+    # The operating system used by the workflow runner
+    runs-on: ubuntu-latest
+
+    # Set of permissions required by this workflow
+    permissions:
+      # Required to checkout the code
+      contents: read
+      # Required to put a comment into the pull-request
+      pull-requests: write
+
+    # The steps to execute
+    steps:
+      # First checkout the repository
+      - uses: actions/checkout@v4
+      # Then install node on the runner
+      - name: "Install Node"
+        uses: actions/setup-node@v4
+        with:
+          # Specify the required version of node
+          node-version: "20.x"
+
+      # Our project has dependencies, install these
+      - name: "Install Deps"
+        run: npm install
+
+      # Run the tests
+      - name: "Test"
+        run: npm run test
+
+      # Store coverage report
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-coverage-report
+          path: coverage/
+          overwrite: true

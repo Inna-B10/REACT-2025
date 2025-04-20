@@ -1,0 +1,23 @@
+/* 
+These are overrides for the User Stylesheet
+this is to provide a foundation that we can
+create our own styles upon. Add to this
+whenever we find default styles that does
+not match/alignes with our expectations
+*/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  display: inline-block;
+}
