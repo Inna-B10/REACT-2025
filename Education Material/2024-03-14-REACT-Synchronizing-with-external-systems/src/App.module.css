@@ -1,0 +1,19 @@
+.section-countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-articles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.articles {
+  list-style-type: none;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
